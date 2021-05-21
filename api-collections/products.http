@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:5000/api
+@baseUrl = http://localhost:8000/api
 
 # products
 ###
@@ -8,11 +8,11 @@ GET {{baseUrl}}/{{resourseName}}
 
 ###
 # @name filterProducts
-GET {{baseUrl}}/{{resourseName}}?color=teal&price_gte=1000
+GET {{baseUrl}}/{{resourseName}}?color=teal&price_gte=&price_lte=1800000
 
 ###
 # @name filterProducts
-GET {{baseUrl}}/{{resourseName}}?color_like=eal
+GET {{baseUrl}}/{{resourseName}}?name_like=Win
 
 ###
 # @name pagination
@@ -34,24 +34,22 @@ POST {{baseUrl}}/{{resourseName}}
 Content-Type: application/json
 
   {
-    "categoryId": "d2c53ad2-b6eb-4603-8f63-32ac8f70b407",
+    "categoryId": "1111",
     "name": "Incredible Plastic Hat",
     "color": "lime",
     "price": 226,
     "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-    "thumbnailUrl": "http://placeimg.com/400/400"
+    "thumbnailUrl": "http://placeimg.com/400/400",
+    "comments": [{"message": "aaaaa"}]
   }
 
 ###
 # @name update
-PATCH {{baseUrl}}/{{resourseName}}/YY9vySA
+PATCH {{baseUrl}}/{{resourseName}}/13
 Content-Type: application/json
 
 {
-   "categoryId": "d2c53ad2-b6eb-4603-8f63-32ac8f70b407",
-    "name": "Incredible Plastic Hat Update",
-    "color": "lime",
-    "price": 300
+   "rating" : []
 }
 
 ###

@@ -1,9 +1,9 @@
-const { fake } = require("faker");
-const faker = require("faker");
-const fs = require("fs");
+const { fake } = require('faker');
+const faker = require('faker');
+const fs = require('fs');
 
 // Set language
-faker.locale = "vi";
+faker.locale = 'vi';
 
 //random data
 
@@ -49,19 +49,19 @@ const randomProductList = (categoryList, numberOfProducts) => {
 
 (() => {
   //random data
-  const categoryList = randomCategoryList(4);
-  const productList = randomProductList(categoryList, 5);
+  const categoryList = randomCategoryList(2);
+  const productList = randomProductList(categoryList, 20);
 
   //combine data
   const db = {
     categories: categoryList,
     products: productList,
     profile: {
-      name: "SonHip",
+      name: 'SonHip',
     },
   };
 
-  fs.writeFile("db.json", JSON.stringify(db), () => {
-    console.log("write data successfully!");
+  fs.writeFile('db.json', JSON.stringify(db), () => {
+    console.log('write data successfully!');
   });
 })();
